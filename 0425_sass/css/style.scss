@@ -1,0 +1,27 @@
+//변수생성
+
+$myFont:'맑은 고딕', arial, sans-serif;
+$baseFontColor:#333;
+$bigFontSize:30px;
+$baseFontSize:12px;
+$boxWidth:1280px;
+$boxCenter:0 auto;
+$bgColor:yellow;
+
+body{
+  font-family: $myFont;
+  font-size: $baseFontSize;
+  color: $baseFontColor;
+}
+h1{
+  font-size: $bigFontSize;
+}
+#wrap{
+  width: $boxWidth;
+  height: 300px;
+  $bgColor01:#ccc;
+  background: $bgColor01;
+  color: $bgColor01;
+  border: 1px solid $bgColor01;
+  margin: $boxCenter;
+}

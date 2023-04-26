@@ -1,0 +1,108 @@
+*{margin: 0; padding: 0;}
+@mixin box{
+  border: 3px solid#333;
+  box-sizing: border-box;
+}
+section{
+  @include box
+}
+@function colums($number:1, $all:3){
+  @return $width*($number/$all);
+}
+$width:100%;
+$width1:1025px;
+$width2:768px;
+$width3:767px;
+$height1:270px;
+$height2:150px;
+$height3:110px;
+body{
+  width: $width;
+}
+article{
+  @media(min-width:$width2){
+    height: $height1;
+  }
+  @media(max-width:$width3){
+    height: $height2;
+  }
+}
+header{
+  width: 100%;
+  background: lightblue;
+  @media(min-width:$width2){
+    height: 123px;
+  }
+  @media(max-width:$width3){
+    height: 80px;
+  }
+}
+main{
+  display: grid;
+}
+.sec1{
+  width: $width;
+  height: 500px;
+  background: olivedrab;
+}
+.sec2{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+  @media(min-width:$width1){
+    .cont01, .cont02, .cont03{
+      width: colums(1);
+      background: tomato; height: $height1;
+    }
+  }
+  @media(max-width:$width1){
+    .cont01, .cont02{
+      width: colums(1.5);
+      background: tomato; height: $height1;
+    }
+    .cont03{
+      width: colums(3);
+      background: tomato; height: $height1;
+    }
+  }
+  @media(max-width:$width3){
+    .cont01, .cont02, .cont03{
+      width: colums(3);
+      background: tomato; height: $height1;
+    }
+  }
+}
+.sec3{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  box-sizing: border-box;
+  @media(min-width:$width1){
+    .cont04, .cont05, .cont06{
+      width: colums(1);
+      background: yellowgreen; height: $height2;
+    }
+  }
+  @media(max-width:$width1){
+    .cont04, .cont05{
+      width: colums(1.5);
+      background: yellowgreen; height: $height2;
+    }
+    .cont06{
+      width: colums(3);
+      background: yellowgreen; height: $height2;
+    }
+  }
+  @media(max-width:$width3){
+    .cont04, .cont05, .cont06{
+      width: colums(3);
+      background: yellowgreen; height: $height2;
+    }
+  }
+}
+footer{
+  width: $width;
+  height: $height3;
+  background: orange;
+}

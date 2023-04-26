@@ -1,0 +1,30 @@
+//import.scss파일
+
+@import 'style';
+
+$width:120px;
+$height:120px;
+$borderRadius:50px;
+h2{
+  font-size: $bigFontSize;
+  color: $baseFontColor;
+  background: $bgColor;
+}
+#login, #naver, #kakao{
+  border-radius: $borderRadius;
+}
+
+#naver, #kakao{
+  background-image: url(../images/sns_icon.png);
+}
+#login{
+  width: $width; height: $height;
+}
+#naver{
+  width: $width; height:$height;
+  background-position: -1111px -249px;
+}
+#kakao{
+  width: $width; height:$height;
+  background-position:-1484px -186px ;
+}

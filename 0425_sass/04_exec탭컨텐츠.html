@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리 - SASS 탭컨텐츠</title>
+  <link rel="stylesheet" href="./css/style3.css" type="text/css">
+  <script src="./script/exec.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h2>제이쿼리 - SASS를 활용한 탭컨텐츠 구현</h2>
+  <p>css확장언어인 SASS를 활용하여 메뉴클릭시 이미지 변경되는 콘텐츠 구현하기</p>
+
+  <div class="tab_wrap">
+    <div class="tab_img"></div>
+    <ul class="tab_ul">
+      <li>[진실된 손맛] 더진한 소곱창전골(리뉴얼)</li>
+      <li>[경복궁 BLACK] 시골 도가니탕</li>
+      <li>[크라운] 딸기산도</li>
+      <li>[뚝심] 진한 소고기국밥</li>
+    </ul>
+  </div>
+
+  <script>
+    $(function() {
+      $('.tab_img').css('background-image', 'url(./images/kurly01.jpg)');
+      $('.tab_ul li').click(function() {
+        let imgPath = './images/kurly0' + ($(this).index() + 1) + '.jpg';
+        $('.tab_img').css('background-image', 'url('+imgPath+')');
+      });
+    });
+  </script>
+</body>
+</html>
